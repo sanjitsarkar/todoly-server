@@ -33,7 +33,7 @@ app.use(passport.initialize())
 app.use(passport.session())
  mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false,useCreateIndex: true}).then(() => {
     const PORT = 5000
-    app.listen(process.env.PORT | PORT, () => {
+    app.listen(process.env.PORT || PORT, () => {
     console.log(`Running on https://todask.herokuapp.com/${PORT}`);
  })
 })
